@@ -6,7 +6,7 @@ import LoaderComponent from '../components/common/Loader/LoaderComponent';
 import BackToTopbtn from '../components/common/BackToTop/BackToTopbtn';
 import { get100Coins } from '../functions/get100Coins';
 import Header from '../components/common/Header/Header';
-
+import Footer from '../components/common/Footer/Footer';
 
 const DashboardPage = () => {
   const [search, setSearch] = useState("");   // Search Bar State.
@@ -23,12 +23,7 @@ const DashboardPage = () => {
     setPage(value);
     var previousIndex = (value - 1) * 10;
     setPaginationCoins(coins.slice(previousIndex, previousIndex + 10));
-  }
-
-  // It Use To send get Request To Coin API data and store in state.
-  useEffect(() => {
-    getData();
-  }, []);
+  };
 
   //  Get 100 Coins Data
   const getData = async () => {
@@ -36,7 +31,13 @@ const DashboardPage = () => {
     setCoins(myCoins);
     setPaginationCoins(myCoins.slice(0, 10));
     setIsLoading(false);
-  }
+  };
+  // It Use To send get Request To Coin API data and store in state.
+  useEffect(() => {
+    getData();
+  }, []);
+
+  
 
   // Search Filter Coins into the api
   var filterCoins = coins.filter((item) =>
@@ -59,6 +60,7 @@ const DashboardPage = () => {
           </div>
         )
       }
+      <Footer />
     </React.Fragment>
   )
 }

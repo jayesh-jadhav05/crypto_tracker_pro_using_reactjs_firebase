@@ -3,12 +3,7 @@ import Pagination from '@mui/material/Pagination';
 import './pagination.css';
 
 export default function PaginationComponent({page,handleChange}) {
-
-
-  // const handleChange = (event, value) => {
-  //   setPage(value);
-  // };
-
+  
   return (
 
     <div className='pagination-component'>

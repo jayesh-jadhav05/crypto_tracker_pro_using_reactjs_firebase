@@ -1,0 +1,23 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: var(--blue);
+    width: 80%;
+    margin: 1rem auto;
+    border-radius: 1rem;
+    align-items: center;
+}
+.social-media-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+@media only screen and (max-width: 365px) {
+    .footer {
+        padding: 1rem 1rem;
+    }
+    .social-media-icons {
+        gap: 0.2rem;
+    }
+}

@@ -92,6 +92,7 @@
 
     .flex-container {
         flex-direction: column;
+        margin-bottom: 5rem;
     }
 
     .hero-right-data {
@@ -126,17 +127,24 @@
     }
 }
 
-@media only screen and (max-width: 360px) {
+/* 
+@media only screen and (max-width: 425px) {
+    .flex-container {
+        margin-bottom: 10rem;
+    }
+} */
+@media only screen and (max-width: 425px) {
 
+    .flex-container {
+        margin-bottom: 5rem;
+    }
     .track-heading,
     .real-time-heading {
         font-size: 2rem;
     }
-
     .iphone-image {  
         left: -4rem; 
     }
-
     .iphone-gradient {
        left: -1rem;
     }

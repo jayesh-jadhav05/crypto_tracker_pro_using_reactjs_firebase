@@ -12,6 +12,7 @@ import LineChartComponent from '../components/Coins/LineChart/LineChartComponent
 import PriceToggle from '../components/Coins/PriceType/PriceToggle';
 import {motion} from 'framer-motion';
 import Header from '../components/common/Header/Header';
+import Footer from '../components/common/Footer/Footer';
 
 const Compare = () => {
   const [crypto1, setCrypto1] = useState("bitcoin");
@@ -51,9 +52,9 @@ const Compare = () => {
   // this onchange function run depend on toggle price or market cap or total volume
   const handlePriceTypeChange = async (event, newType) => {
     setIsLoader(true);
-    setPriceToggle(newType);
-    const prices1 = await getCoinPrices(crypto1, days, newType);
-    const prices2 = await getCoinPrices(crypto2, days, newType);
+    setPriceToggle(event.target.value);
+    const prices1 = await getCoinPrices(crypto1, days, event.target.value);
+    const prices2 = await getCoinPrices(crypto2, days, event.target.value);
     settingChartData(setChartData, prices1, prices2);
     setIsLoader(false);
 
@@ -100,7 +101,7 @@ const Compare = () => {
         isLoader ? (
           <LoaderComponent />
         ) : (
-          <>
+          <React.Fragment>
             <motion.div className='coins-days-flex filter-coins' initial={{ opacity:0, x:-50}} animate={{ opacity:1, x:0}} transition={{ duration:0.5 ,delay:0.5}}>
               <SelectCoinsComponent crypto1={crypto1} crypto2={crypto2} handleCoinChange={handleCoinChange} />
               <SelectDaysComponent days={days} handledaysChange={handledaysChange} noPTag={true} />
@@ -121,8 +122,9 @@ const Compare = () => {
             <motion.div className='grey-wrapper coin-info-div' initial={{ opacity:0, x:50}} animate={{ opacity:1, x:0}} transition={{ duration:0.5 ,delay:1}}>
               <CoinInfo heading={crypto2Data.name} desc={crypto2Data.desc} />
             </motion.div>
-          </>
+          </React.Fragment>
         )}
+       <Footer />
     </>
   )
 };

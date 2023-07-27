@@ -1,0 +1,13 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.login input {
+    padding: 0.5rem 1rem;
+    border: none;
+    border: 1px solid var(--blue);
+}
+.login input:focus {
+    outline: none;
+}

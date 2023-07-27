@@ -26,12 +26,10 @@ const GridComponent = ({ coin, addToWatchList,isCheck}) => {
                 </NavLink>
                 <div className='watchlist-container' onClick={() => addToWatchList(coin)}>
                     {
-                        isCheck ? <StarRoundedIcon onClick={() => setColor({color:"red"})} style={Color}/> : <DeleteIcon style={{color:"red"}} />
+                        isCheck ?<StarRoundedIcon onClick={() => setColor({color:"#9176FF"})} style={Color}/>: <DeleteIcon style={{color:"red"}} />
                     }
                 </div>
             </div>
-
-
             <NavLink to={`/coin/${coin.id}`}>
                 {coin.price_change_percentage_24h > 0 ? (
                     <div className='chip-flex'>

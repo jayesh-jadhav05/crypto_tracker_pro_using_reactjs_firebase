@@ -35,6 +35,8 @@ export default function SelectDaysComponent({ days, handledaysChange ,noPTag}) {
           <MenuItem value={30}>30 Days</MenuItem>
           <MenuItem value={60}>60 Days</MenuItem>
           <MenuItem value={90}>90 Days</MenuItem>
+          <MenuItem value={120}>120 Days</MenuItem>
+          <MenuItem value={160}>160 Days</MenuItem>
         </Select>
     </div>
   );
